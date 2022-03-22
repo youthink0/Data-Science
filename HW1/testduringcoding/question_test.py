@@ -1,6 +1,11 @@
 from collections import defaultdict
 from csv import reader
-
+import multiprocessing as mp
+from multiprocessing import Queue
+from multiprocessing import Lock
+import threading
+import queue
+import os
 ''' 
 ###----defaultdict test----
 s = [('red', 1), ('blue', 2), ('red', 3), ('blue', 4), ('red', 1), ('blue', 4)]
@@ -83,10 +88,67 @@ if __name__== "__main__" :
 
     fpTree, headerTable = constructTree(itemSetList, frequency, 1)
 '''
+
+'''
 def freq_test(freqi):
     freqi=2
     return
 freqitem=1
 freq_test(freqitem)
 print(freqitem)
+'''
+
+'''
+freq = []
+freq.append('1')
+freq.append('1')
+print(freq)
+'''
+
+cpu_count = threading.active_count()
+print("cpu:", cpu_count)
+print(os.cpu_count())
+item = [str(i) for i in range(50)]
+q = queue.Queue()
+lock = threading.Lock()
+for index, i in enumerate(item):
+    q.put([index, i])
+#for i in range(cpu_count):
+#    q.put("Done")
+
+
+cnt = 0
+def task(q, lock):
+    global cnt
+    '''
+    while True:
+        msg = q.get()
+        if msg == "Done":
+            break;
+        lock.acquire()
+        process = mp.current_process()
+        print("before:", cnt.value, "pid:", process.pid)
+        cnt.value+=msg[0]
+        print(msg[0], cnt.value)
+        lock.release()
+    '''
+    while q.qsize() > 0:
+        msg = q.get()
+        lock.acquire()
+        tid = threading.get_ident()
+        print("before:", cnt, "tid:", tid)
+        cnt+=msg[0]
+        print(msg[0], cnt)
+        lock.release()
+
+process_list = []
+for i in range(cpu_count):
+    #process_list[int(i%cpu_count)].terminate()
+    process_list.append(threading.Thread(target = task, args = (q, lock, )))
+    process_list[i].start()
+    #process_list[int(i%cpu_count)].join()
+for i in range(cpu_count):
+    process_list[i].join()
+#print(process_list)
+print(cnt)
 
