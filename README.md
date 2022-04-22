@@ -7,3 +7,5 @@
 * python3 110065503_hw1.py [min support] [InputFileName] [OutputFileName] 
   * python3 110065503_hw1.py 0.2 dataset/sample.txt outputfile/output.txt
 
+## HW2 : Kaggle comepition
+### learning ML's process, ex: normalize, resampling, etc.
