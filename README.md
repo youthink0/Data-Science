@@ -9,3 +9,12 @@
 
 ## HW2 : Kaggle comepition
 ### learning ML's process, ex: normalize, resampling, etc.
+
+## HW3 : Global Optimization
+### learning Global Optimization's method, including CMAES & DE(Differential Evolution)
+
+### Run
+* pip install sourcedefender
+* type command : python 110065503_hw3.py
+
+
