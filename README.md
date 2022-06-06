@@ -23,7 +23,11 @@
 ### attack process
 ![image](https://user-images.githubusercontent.com/62932654/172207644-0a5d0f0a-735f-4c52-9523-d45d0b76653e.png)
 ### Setup
-* pip -r requirements.txt
+* create a Conda environment
+  * conda create -n env_pytorch python=3.6
+  * conda activate env_pytorch
+* package
+  * pip -r requirements.txt
 ### Run
 * python main.py --input_file target_nodes_list.txt --data_path ./data/data.pkl --model_path saved-models/gcn.pt --use_gpu
 
