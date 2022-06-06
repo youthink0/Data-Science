@@ -15,7 +15,7 @@
 ### Setup
 * pip install sourcedefender
 ### Run
-* type command : python 110065503_hw3.py
+* python 110065503_hw3.py
 
 ## HW3 : Graph Adversarial Attack
 ### implement by Nettack model
