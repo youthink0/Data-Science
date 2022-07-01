@@ -17,7 +17,7 @@
 ### Run
 * python 110065503_hw3.py
 
-## HW3 : Graph Adversarial Attack
+## HW4 : Graph Adversarial Attack
 ### implement by Nettack model
 ### Reference code : https://github.com/danielzuegner/nettack
 ### attack process
@@ -30,6 +30,18 @@
   * pip -r requirements.txt
 ### Run
 * python main.py --input_file target_nodes_list.txt --data_path ./data/data.pkl --model_path saved-models/gcn.pt --use_gpu
+
+## HW5 : Self-supervised Learning 
+### implement by MERIT
+### source : https://github.com/GRAND-Lab/MERIT
+### Setup
+* pytorch
+* numpy
+* networkx
+* scipy
+* scikit-learn ( sklearn )
+### Run
+* execute run.sh
 
 
 
