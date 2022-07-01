@@ -36,7 +36,7 @@
 ### source : https://github.com/GRAND-Lab/MERIT
 ### Result (60 epoch)
 * accuracy : 0.82
-* Total Execution Time : 14900(s)
+* Total Execution Time : 14900(s)  
 ![image](https://user-images.githubusercontent.com/62932654/176852335-334c9d21-ed3d-41d6-bf7a-0ad94cbf6b52.png)
 ### Setup
 * pytorch
